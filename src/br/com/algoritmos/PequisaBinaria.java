@@ -13,7 +13,7 @@ import java.util.Random;
  *
  * @author maria
  */
-public class pequisaBinaria {
+public class PequisaBinaria {
     
     //declaração de variavel
     private static int item;

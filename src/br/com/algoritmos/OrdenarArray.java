@@ -6,6 +6,7 @@
 package br.com.algoritmos;
 
 import java.util.Arrays;
+import java.util.Random;
 
 /**
  *
@@ -14,35 +15,72 @@ import java.util.Arrays;
 public class OrdenarArray {
 
     private static int menorValor;
-    private static int menorIndice;
-    private static int[] array;
+    private static int indiceMenorValor;
+    private static int array[];
 
     public static int buscaMenorValor(int[] array) {
         menorValor = array[0];
-        menorIndice = 0;
+        indiceMenorValor = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] < menorValor) {
                 menorValor = array[i];
-                menorIndice = i;
+                indiceMenorValor = i;
             }
         }
-        return menorIndice;
+        return indiceMenorValor;
     }
 
-    public static int[] ordenacaoPorSelecao(int[] array) {
-        int[] novoArray = new int[0];
+    public static int[] ordenacaoPorSelecao(int[] array, int indiceMenorValor) {
+        int[] arrayOrdenado = array;
 
         for (int i = 0; i < array.length; i++) {
-            menorValor = buscaMenorValor(array);
-            novoArray[i] = menorValor;
+            for (int indice = 0; indice <= array.length - 1; indice++) {
+                if (array[i] > array[indiceMenorValor]) {
+                    int guardaValor = array[i];
+                    array[i] = array[indiceMenorValor];
+                    array[indiceMenorValor] = guardaValor;
+                }
+            }
         }
-        return novoArray;
+        return arrayOrdenado;
 
+    }
+
+    //metodos auxiliares
+    public static int[] geraLista(int tamLista, int valorMax) {
+        Random random = new Random();
+        int[] array = new int[tamLista];
+        int numeroGerado;
+        int numero = 0;
+        for (int i = 0; i < tamLista; i++) {
+            numeroGerado = random.nextInt(10);
+            if (numeroGerado < valorMax && numeroGerado >= 0) {
+                numero = numero + numeroGerado;
+                array[i] = numero;
+            } else {
+                i--;
+            }
+
+        }
+        return array;
+    }
+
+    public static void testaGeraLista(int numeroListas) {
+        for (int i = 0; i < numeroListas; i++) {
+            array = geraLista(5, 100);
+            System.out.println("Lista " + i + ": " + Arrays.toString(array));
+        }
     }
 
     public static void main(String[] args) {
-        int[] array = {1,2,3,4,5};
-        System.out.println("O menor indice é " + buscaMenorValor(array));
-        System.out.println("O novo array ordenado é "+  Arrays.toString(ordenacaoPorSelecao(array)));
+//            testaGeraLista(10);
+
+        int[] array = {10, 8, 34, 4, 15};
+//        array = geraLista(5, 100);
+
+        indiceMenorValor = buscaMenorValor(array);
+        int[] arrayOrdenado = ordenacaoPorSelecao(array, indiceMenorValor);
+        System.out.println("O menor indice é " + indiceMenorValor + " com o valor " + array[indiceMenorValor]);
+        System.out.println("O novo array ordenado é " + Arrays.toString(arrayOrdenado));
     }
 }
