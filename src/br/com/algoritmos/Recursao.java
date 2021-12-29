@@ -13,6 +13,7 @@ import java.util.List;
  * @author maria
  */
 public class Recursao {
+    //objetivo é criar um metodo que ache o nome especifico dentro de um array especifico, tipo "Onde esta a maria?" e ele responde "no array dois!"
 
     //Abordagem while
     
