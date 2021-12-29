@@ -6,7 +6,6 @@
 package br.com.algoritmos;
 
 import java.util.Arrays;
-import java.util.Random;
 
 /**
  *
@@ -17,7 +16,6 @@ public class OrdenaPorSelecao {
 
     private static int menorValor;
     private static int indiceMenorValor;
-    private static int array[];
 
     public static int buscaMenorValor(int[] array) {
         menorValor = array[0];
@@ -51,52 +49,13 @@ public class OrdenaPorSelecao {
 
     }
 
-    //metodos que geram um array
-//    public static int[] geraLista(int tamLista, int valorMax) {
-//        Random random = new Random();
-//        int[] array = new int[tamLista];
-//        int numeroGerado;
-//        int numero = 0;
-//        for (int i = 0; i < tamLista; i++) {
-//            numeroGerado = random.nextInt(10);
-//            if (numeroGerado < valorMax && numeroGerado >= 0) {
-//                numero = numero + numeroGerado;
-//                array[i] = numero;
-//            } else {
-//                i--;
-//            }
-//
-//        }
-//        return array;
-//    }
-    public static int[] geraArray(int qtdeNum, int numeroMaximo) {
-        //cria lista com todos os numeros até numero maximo, um pouco mais demorado
-        int[] listaCriada = new int[numeroMaximo];
-        for (int i = 0; i < numeroMaximo; i++) {
-            listaCriada[i] = i;
-        }
-        //sorteia a quantidade de numeros necessarias pra formar o array
-        Random random = new Random();
-        array = new int[qtdeNum];
-        for (int i = 0; i < qtdeNum; i++) {
-            int numeroSorteado = random.nextInt(listaCriada.length);
-            array[i] = numeroSorteado;
-        }
-
-        return array;
-    }
-
-    public static void testaGera(int numeroListas) {
-        for (int i = 0; i < numeroListas; i++) {
-            array = geraArray(5, 100);
-            System.out.println("Lista " + i + ": " + Arrays.toString(array));
-        }
-    }
+    //TODO criar classe apenas para geradores de array e listas
+    
 
     public static void main(String[] args) {
 //        testaGeraLista(10);
 //        int[] array = {5, 7, 3, 8};
-        array = geraArray(20, 100);
+        int array[] = GeraListasArrays.geraArray(20, 100);
         indiceMenorValor = buscaMenorValor(array);
 
         System.out.println("O menor indice é " + indiceMenorValor + " com o valor " + array[indiceMenorValor]);

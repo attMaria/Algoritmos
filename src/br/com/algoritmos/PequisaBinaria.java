@@ -22,15 +22,8 @@ public class PequisaBinaria {
   
     
     //Algoritmo
-    public static List<Integer> criaLista(int numeroMaximo){
-        List<Integer> listaCriada = new ArrayList<>();
-        for (int i = 0; i < numeroMaximo; i++) {
-            listaCriada.add(i);
-        }
-        
-        return listaCriada;        
-    } 
-    
+    //TODO criar classe apenas para geradores de array e listas
+ 
     public static int escolheItem(List<Integer> lista){
          Random random = new Random();
          int item = lista.get(random.nextInt(lista.size()));
@@ -71,7 +64,7 @@ public class PequisaBinaria {
     }
     
     public static void main(String[] args) {
-        lista = criaLista(100);
+        lista = GeraListasArrays.criaLista(100);
 //        item = 1;
         item = escolheItem( lista);
         pesquisaBinaria = pesquisa_binaria(lista, item);
