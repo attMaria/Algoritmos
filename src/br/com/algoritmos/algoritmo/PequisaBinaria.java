@@ -5,7 +5,7 @@
  */
 package br.com.algoritmos.algoritmo;
 
-import br.com.algoritmos.util.GeraListasArrays;
+import br.com.algoritmos.util.ListaNumerica;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -65,7 +65,7 @@ public class PequisaBinaria {
     }
     
     public static void main(String[] args) {
-        lista = GeraListasArrays.criaLista(100);
+        lista = ListaNumerica.criaLista(100);
 //        item = 1;
         item = escolheItem( lista);
         pesquisaBinaria = pesquisa_binaria(lista, item);

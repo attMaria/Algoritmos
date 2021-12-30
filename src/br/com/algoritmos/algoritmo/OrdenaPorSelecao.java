@@ -5,7 +5,7 @@
  */
 package br.com.algoritmos.algoritmo;
 
-import br.com.algoritmos.util.GeraListasArrays;
+import br.com.algoritmos.util.ListaNumerica;
 import java.util.Arrays;
 
 /**
@@ -56,7 +56,7 @@ public class OrdenaPorSelecao {
     public static void main(String[] args) {
 //        testaGeraLista(10);
 //        int[] array = {5, 7, 3, 8};
-        int array[] = GeraListasArrays.geraArray(20, 100);
+        int array[] = ListaNumerica.geraArray(20, 100);
         indiceMenorValor = buscaMenorValor(array);
 
         System.out.println("O menor indice é " + indiceMenorValor + " com o valor " + array[indiceMenorValor]);
