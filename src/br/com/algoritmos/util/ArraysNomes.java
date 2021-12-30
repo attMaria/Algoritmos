@@ -15,7 +15,7 @@ import java.util.List;
 public class ArraysNomes {
     //Utilizado em Recursão
 
-   public static void recebeDados(int qtdeNomes, int qtdeArrays,  String[] nomes){
+   public static List<ArrayList> recebeDados(int qtdeNomes, int qtdeArrays,  String[] nomes){
         int tamanhoLista = nomes.length;
         int qtdeNomesTotal = qtdeNomes * qtdeArrays;
         
@@ -34,14 +34,14 @@ public class ArraysNomes {
         dados.add((ArrayList) valores);
         dados.add((ArrayList) nomesA);
         
-        confereSe(dados);
+        return confereSe(dados);
 
     }
     
    
    
     
-    public static void confereSe(List<ArrayList> dados){
+    public static List<ArrayList> confereSe(List<ArrayList> dados){
         List<Integer> valores = dados.get(0);
         int tamanhoLista = valores.get(0);
         int qtdeNomesTotal = valores.get(1);
@@ -51,6 +51,7 @@ public class ArraysNomes {
         if (qtdeNomesTotal <= tamanhoLista) {
 
             List<ArrayList> arrays = geraArrays(dados);
+            //TODO separar partes que fazem o sout 
             int i = 1;
             for (ArrayList array : arrays) {
                 System.out.println("Grupo " + i);
@@ -62,7 +63,7 @@ public class ArraysNomes {
                 System.out.println("");
                 i++;
             }
-
+            return arrays;
         } else {
             System.out.println("Nomes insuficientes para distribuição igual entre listas!");
             System.out.println("A lista original de nomes contem " + valores.get(0) + " items");
@@ -73,7 +74,7 @@ public class ArraysNomes {
             System.out.println("o que excede em " + mais + " nomes a lista disponivel.");
 
         }
-
+        return null;
     }
     
      
