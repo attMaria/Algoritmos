@@ -45,34 +45,12 @@ public class ArraysNomes {
         List<Integer> valores = dados.get(0);
         int tamanhoLista = valores.get(0);
         int qtdeNomesTotal = valores.get(1);
-        int qtdeArrays = valores.get(2);
-        int qtdeNomes = valores.get(3);
 
         if (qtdeNomesTotal <= tamanhoLista) {
 
             List<ArrayList> arrays = geraArrays(dados);
             //TODO separar partes que fazem o sout 
-            int i = 1;
-            for (ArrayList array : arrays) {
-                System.out.println("Grupo " + i);
-                int j = 1;
-                for (Object nome : array) {
-                    System.out.println("Integrante " + j + ": "+ nome);
-                    j++;
-                }
-                System.out.println("");
-                i++;
-            }
-            return arrays;
-        } else {
-            System.out.println("Nomes insuficientes para distribuição igual entre listas!");
-            System.out.println("A lista original de nomes contem " + valores.get(0) + " items");
-            System.out.println("Para uma ditribuição igual entre grupos, de acordo com os valores passados:");
-            System.out.println("  Nomes por grupo: " + qtdeNomes);
-            System.out.println("  Quantidade de grupos: " + qtdeArrays);
-            int mais = qtdeNomesTotal - tamanhoLista;
-            System.out.println("o que excede em " + mais + " nomes a lista disponivel.");
-
+           return arrays;
         }
         return null;
     }
