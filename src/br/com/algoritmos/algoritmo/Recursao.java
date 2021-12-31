@@ -26,13 +26,11 @@ public class Recursao {
 
     //Abordagem while
     public static List<ArrayList> procWhile(List<ArrayList> escola, String nome) {
-        String[] pilha;
+        List<String> pilha =new ArrayList();
         for (ArrayList turma : escola) {
             for (Object grupo : turma) {
-                for (int i = 0; i < 3; i++) {
-
-                }
-
+                pilha.add(grupo.toString());
+                
             }
         }
 
