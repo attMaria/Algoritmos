@@ -5,7 +5,9 @@
  */
 package br.com.algoritmos.algoritmo;
 
-import br.com.algoritmos.util.ArraysNomes;
+import br.com.algoritmos.entidade.Alunos;
+import br.com.algoritmos.gera.ArraysNomes;
+import static br.com.algoritmos.util.ListaNomes.geraListaNomes;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +23,7 @@ public class Recursao {
     private static List<ArrayList> turma;
     private static int qtdeTurmas;
     private static int qtdeGrupos;
-    private static int qtdeNomes;
+    private static int qtdeAlunosGrupo;
 
     //Abordagem while
     public static List<ArrayList> procWhile(List<ArrayList> escola, String nome) {
@@ -57,17 +59,28 @@ public class Recursao {
 
     public static void main(String[] args) {
         
-        String[] nome = {"Rafael", "Vitória", "Fabíola", "Bruno", "Jhonata", "Andrey", "Edson", "Gabriel", "Arthur", "Marcelo", "Diego", "Maria",
+        String[] nomes = {"Rafael", "Vitória", "Fabíola", "Bruno", "Jhonata", "Andrey", "Edson", "Gabriel", "Arthur", "Marcelo", "Diego", "Maria",
         "Gabriel", "Guilherme", "Eduardo", "Letícia", "Jeferson", "Fábio", "Luccas", "Igor", "Silvio"}; // 21 nomes
         
-        String[] sobrenome ={"Almeida", "Azevedo", "Braga", "Barros", "Brasil", "Campos", "Cardoso", "Correia"
+        String[] sobrenomes ={"Almeida", "Azevedo", "Braga", "Barros", "Brasil", "Campos", "Cardoso", "Correia"
                 , "Castro", "Costa", "Fontes", "Guimarães" , "Magalhães" , "Macedo", "Matos", "Pedreira", 
                 "Queirós", "Ribeiro", "Rocha", "Siqueira", "Serra", "Souza", "Teixeira", "Valle"};//24 sobrenomes
              
         qtdeTurmas = 4;
         qtdeGrupos = 2;
-        qtdeNomes = 5;
+        qtdeAlunosGrupo = 5;
 
+        int qtdeNomes = qtdeTurmas * qtdeGrupos * qtdeAlunosGrupo;
+        
+        Alunos todosAlunos = new Alunos(geraListaNomes(nomes, sobrenomes, qtdeNomes ));
+        
+        Alunos alunos = new Alunos();
+        
+        if(){
+            
+        }
+        
+         
 
 //        for (int i = 0; i < qtdeTurmas; i++) {
 //            System.out.println("Turma " + (i+1));

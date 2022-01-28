@@ -13,6 +13,9 @@ public class Alunos {
     private Object alunos;
 
     
+    public Alunos(){
+        
+    }
     
     public Alunos(Object alunos) {
         this.alunos = alunos;

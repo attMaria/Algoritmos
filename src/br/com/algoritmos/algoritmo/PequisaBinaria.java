@@ -5,7 +5,7 @@
  */
 package br.com.algoritmos.algoritmo;
 
-import br.com.algoritmos.util.ListaNumerica;
+import br.com.algoritmos.gera.ListaNumerica;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;

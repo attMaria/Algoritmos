@@ -5,7 +5,7 @@
  */
 package br.com.algoritmos.algoritmo;
 
-import br.com.algoritmos.util.ListaNumerica;
+import br.com.algoritmos.gera.ListaNumerica;
 import java.util.Arrays;
 
 /**
@@ -50,7 +50,7 @@ public class OrdenaPorSelecao {
 
     }
 
-    //TODO criar classe apenas para geradores de array e listas
+   
     
 
     public static void main(String[] args) {

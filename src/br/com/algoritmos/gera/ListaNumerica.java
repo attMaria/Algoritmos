@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.algoritmos.util;
+package br.com.algoritmos.gera;
 
 import java.util.ArrayList;
 import java.util.Arrays;
