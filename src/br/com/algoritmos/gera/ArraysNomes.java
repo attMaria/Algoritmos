@@ -28,7 +28,7 @@ public class ArraysNomes {
         valores.add(0, tamanhoLista);
         valores.add(1, qtdeNomesTotal);
         valores.add(2, qtdeArrays);
-        valores.add(3, qtdeNomes);
+        valores.add(3, qtdeNomes );
         
         List<ArrayList> dados = new ArrayList();
         dados.add((ArrayList) valores);

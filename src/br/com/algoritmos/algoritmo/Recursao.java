@@ -5,11 +5,12 @@
  */
 package br.com.algoritmos.algoritmo;
 
-import br.com.algoritmos.entidade.Alunos;
+import br.com.algoritmos.entidade.Objetos;
 import br.com.algoritmos.gera.ArraysNomes;
-import static br.com.algoritmos.util.ListaNomes.geraListaNomes;
+import br.com.algoritmos.gera.ListasObjetos;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  *
@@ -59,49 +60,11 @@ public class Recursao {
 
     public static void main(String[] args) {
         
-        String[] nomes = {"Rafael", "Vitória", "Fabíola", "Bruno", "Jhonata", "Andrey", "Edson", "Gabriel", "Arthur", "Marcelo", "Diego", "Maria",
-        "Gabriel", "Guilherme", "Eduardo", "Letícia", "Jeferson", "Fábio", "Luccas", "Igor", "Silvio"}; // 21 nomes
-        
-        String[] sobrenomes ={"Almeida", "Azevedo", "Braga", "Barros", "Brasil", "Campos", "Cardoso", "Correia"
-                , "Castro", "Costa", "Fontes", "Guimarães" , "Magalhães" , "Macedo", "Matos", "Pedreira", 
-                "Queirós", "Ribeiro", "Rocha", "Siqueira", "Serra", "Souza", "Teixeira", "Valle"};//24 sobrenomes
-             
-        qtdeTurmas = 4;
-        qtdeGrupos = 2;
-        qtdeAlunosGrupo = 5;
-
-        int qtdeNomes = qtdeTurmas * qtdeGrupos * qtdeAlunosGrupo;
-        
-        Alunos todosAlunos = new Alunos(geraListaNomes(nomes, sobrenomes, qtdeNomes ));
-        
-        Alunos alunos = new Alunos();
-        
-        if(){
-            
+        for (int i = 0; i < 100; i++) {
+             System.out.println(" teste " + ListasObjetos.criaCaixa(5, 2));  
         }
-        
-         
-
-//        for (int i = 0; i < qtdeTurmas; i++) {
-//            System.out.println("Turma " + (i+1));
-//            turma = ArraysNomes.recebeDados(qtdeNomes, qtdeGrupos, nome);
-//            if (!turma.isEmpty()) {
-//                escola.add((ArrayList) turma);
-//                imprimeArrays(turma);
-//            } else {
-//                System.out.println("Nomes insuficientes para distribuição igual entre listas!");
-//                System.out.println("A lista original de nomes contem " + nome.length + " items");
-//                System.out.println("Para uma ditribuição igual entre grupos, de acordo com os valores passados:");
-//                System.out.println("  Nomes por grupo: " + qtdeNomes);
-//                System.out.println("  Quantidade de grupos: " + qtdeGrupos);
-//                int mais = (qtdeNomes * qtdeGrupos) - nome.length;
-//                System.out.println("o que excede em " + mais + " nomes a lista disponivel.");
-//            }
-//        }
-//
-//        String nome = "maria";
-//        procWhile(escola, nome);
-
+      
+       
     }
 
 }
