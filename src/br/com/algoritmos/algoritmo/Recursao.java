@@ -18,24 +18,22 @@ import java.util.Random;
  */
 public class Recursao {
 
-//    Escola escola = new Escola();
-
-    private static String[] alunos; 
-    private static List<ArrayList> turma;
-    private static int qtdeTurmas;
-    private static int qtdeGrupos;
-    private static int qtdeAlunosGrupo;
 
     //Abordagem while
-    public static List<ArrayList> procWhile(List<ArrayList> escola, String nome) {
-        List<String> pilha =new ArrayList();
-        for (ArrayList turma : escola) {
-            for (Object grupo : turma) {
-                pilha.add(grupo.toString());
-                
+    public static List<ArrayList> procWhile(int qtdeObjsCaixa, int maxLoops) {
+        List<String> caixa = new ArrayList();
+        List<String> pilha = new ArrayList();
+        
+        caixa = ListasObjetos.geraCaixaObjetos(qtdeObjsCaixa);
+        for (String objeto : caixa) {
+            if(objeto == "Caixa"){
+                int index = objeto.indexOf(objeto);
+                caixa.addAll(index, caixa);
             }
         }
-
+        
+        
+        
         return null;
     }
 
