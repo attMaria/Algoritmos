@@ -5,12 +5,11 @@
  */
 package br.com.algoritmos.algoritmo;
 
-import br.com.algoritmos.entidade.Objetos;
-import br.com.algoritmos.gera.ArraysNomes;
+
 import br.com.algoritmos.gera.ListasObjetos;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
+
 
 /**
  *
@@ -24,7 +23,7 @@ public class Recursao {
         List<String> caixa = new ArrayList();
         List<String> pilha = new ArrayList();
         
-        caixa = ListasObjetos.geraCaixaObjetos(qtdeObjsCaixa);
+        caixa = ListasObjetos.insereObjetos(qtdeObjsCaixa);
         for (String objeto : caixa) {
             if(objeto == "Caixa"){
                 int index = objeto.indexOf(objeto);
@@ -58,9 +57,7 @@ public class Recursao {
 
     public static void main(String[] args) {
         
-        for (int i = 0; i < 100; i++) {
-             System.out.println(" teste " + ListasObjetos.criaCaixa(5, 2));  
-        }
+        ListasObjetos.empacotaCaixa(5, 5);
       
        
     }

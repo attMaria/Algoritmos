@@ -7,8 +7,10 @@ package br.com.algoritmos.gera;
 
 
 
+import br.com.algoritmos.entidade.Caixa;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Random;
 
 /**
@@ -17,8 +19,8 @@ import java.util.Random;
  */
 public class ListasObjetos {
     
-    static String [] objetos = {"Caixa", "abridor", "açucareiro", "adaga", "agulha", "alfinete", "algema", "alicate", 
-        "almofada", "bigorna", "binóculo", "cata-vento", "CD", "celular", "chave", "dardo", "dedal", "dentadura", 
+    static String [] objetos = {"abridor", "açucareiro", "adaga", "agulha", "alfinete", "algema", "alicate", 
+        "almofada", "bigorna", "binóculo", "cata-vento", "CD", "celular", "dardo", "dedal", "dentadura", 
         "elástico", "envelope", "enxada", "escada", "escorredor", "escova", "escudo", "facão", "farol", "ferradura",
         "fichário", "gaita", "gancho", "gangorra", "garfo", "gargantilha", "garrafa", "helicóptero", "hidrante",
         "hidratante",  "impressora", "inalador", "incenso", "ingresso", "jangada", "jaqueta", "jardineira", "jarra",
@@ -28,53 +30,95 @@ public class ListasObjetos {
          "xícara", "zíper"};
     
 
-    public static List<String> geraCaixaObjetos(int qtdeMaxObjs) {
+     public static List<String> insereObjetos(int qtdeMaxObjs) {
         Random random = new Random();
-        List<String> caixa = new ArrayList();
+        List<String> objsCaixa = new ArrayList();
         int qtdeObjs = random.nextInt(qtdeMaxObjs + 1);
-
+        
+        if(qtdeObjs == 0){
+            qtdeObjs++;
+        }
+        
         for (int i = 0; i < qtdeObjs; i++) {
             
             int indexObj = random.nextInt(objetos.length);
             
             String objeto = objetos[indexObj];
             
-            if(caixa.contains(objeto) ){
+            if(objsCaixa.contains(objeto) ){
                 i--;
             }else{
-                caixa.add(objeto);
+                objsCaixa.add(objeto);
             }
-            
+             
         }
+        return objsCaixa;
+               
+    }   
+    
+    
+    public static Caixa empacotaCaixa(int qtdeMaxObjs, int qtdeCaixas){
+       Caixa caixaChave = new Caixa();
+       
         
-        if(!caixa.contains("Caixa")){
-            caixa.add(0, objetos[0]);
-        }
-
+//        caixaChave.setObjetos(("chave");
+        caixaChave.setCaixa((Caixa) insereObjetos(qtdeMaxObjs) );
+        
+        Caixa caixa = new Caixa();
+        caixa.setCaixa(caixa);
+        
+       
+        int i = 0;
+        caixa = caixasEmCaixa(qtdeCaixas, caixa, qtdeMaxObjs, i);
+        
         return caixa;
     }
     
     
+   public static Caixa caixasEmCaixa(int qtdeCaixas, Caixa caixa, int qtdeMaxObjs, int i){
+
+       caixa.setCaixa((Caixa) insereObjetos(qtdeMaxObjs));
+       i++;
+
+       if(i <= qtdeCaixas){
+           Caixa maisUmaCaixa = new Caixa();
+           maisUmaCaixa = caixa;
+           caixasEmCaixa(qtdeCaixas, maisUmaCaixa, qtdeMaxObjs, i);
+       }
+       
+       return caixa;
+   }
     
     
-    public static int criaCaixa ( int qtdeMaxObjsCaixa, int qtdeMaxCaixas){
-        Random random = new Random();
-        int qtdeObjs = random.nextInt(qtdeMaxCaixas + 1);
-        
-        List<String> caixa = new ArrayList();
-        caixa = geraCaixaObjetos(qtdeObjs);
-        
-        
-        for (String objeto : caixa) {
-            if("Caixa".equals(objeto) ){
-                qtdeObjs = random.nextInt(qtdeMaxCaixas + 1);
-                caixa = geraCaixaObjetos(qtdeObjs);
-            }
-        }
-        
-        return qtdeObjs;
-        
-    }
+   
     
     
+    
+    
+    
+//    
+//    public static int criaCaixa ( int qtdeMaxObjsCaixa, int qtdeMaxCaixas){
+//        Random random = new Random();
+//        int qtdeObjs = random.nextInt(qtdeMaxCaixas + 1);
+//        
+//        List<String> caixa = new ArrayList();
+//        caixa = insereObjetos(qtdeObjs);
+//        
+//        
+//        for (String objeto : caixa) {
+//            if("Caixa".equals(objeto) ){
+//                qtdeObjs = random.nextInt(qtdeMaxCaixas + 1);
+//                caixa = insereObjetos(qtdeObjs);
+//            }
+//        }
+//        
+//        return qtdeObjs;
+//        
+//    }
+////        String[] teste = {"teste"};
+////        String[] segteste= {teste.toString()};
+//    
+//    
+//}
+
 }
